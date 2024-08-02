@@ -14,6 +14,9 @@ builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
 // AutoMapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+// Controllers
+builder.Services.AddControllers();
+
 var app = builder.Build();
 
 // Prep our Database
@@ -27,5 +30,8 @@ if (app.Environment.IsDevelopment())
 
 // Middleware
 app.UseHttpsRedirection();
+
+// Controllers
+app.MapControllers();
 
 app.Run();
