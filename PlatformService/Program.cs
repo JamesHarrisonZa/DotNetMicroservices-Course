@@ -11,6 +11,9 @@ builder.Services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("InMe
 // Dependency injection registrations
 builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
 
+// AutoMapper
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 var app = builder.Build();
 
 // Prep our Database
